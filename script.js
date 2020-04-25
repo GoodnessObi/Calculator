@@ -1,25 +1,34 @@
-// let num1 = document.getElementsByClassName('first-number');
-// let num2 = document.getElementsByClassName('second-number');
-// let mathResult = document.getElementsByClassName('total');
-let num1;
-let num2;
-let symbol;
 
-function doMath(num1, num2, symbol) {
-    if (symbol === '+') {
-        total = num1 + num2;
-    } else if (symbol === '−') {
-        total = num1 - num2;
-    } else if (symbol === '×') {
-        total = num1 * num2;
+let symbol = document.querySelectorAll('.math-keys');
+let display = document.getElementById('math-result');
+
+
+
+symbol.forEach(item => {
+    item.addEventListener('click', event => {
+      //handle click
+        let num1 = document.getElementById('first-number');
+        let num2 = document.getElementById('second-number');
+        const num1Val = parseInt(num1.value);
+        const num2Val = parseInt(num2.value);
+ 
+        let total = doMath(num1Val, num2Val, item.innerText);
+
+        display.innerText = total;
+    })
+  })
+
+function doMath(num1Val, num2Val, operator) {
+    if (operator === '+') {
+        total = num1Val + num2Val;
+    } else if (operator === '−') {
+        total = num1Val - num2Val;
+    } else if (operator === '×') {
+        total = num1Val * num2Val;
     } else {
-        total = num1 / num2;
+        total = num1Val / num2Val;
     }
-    console.log(total);
     return total;
     
 }
 
-doMath(2, 10, '×');
-
-// document.querySelector ('.calculator-keys');
