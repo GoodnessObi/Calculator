@@ -45,6 +45,7 @@ button {
     background-color: #01385F;
     color: #fff;
     border: none;
+    outline: none;
     /* border-radius: 50%; */
 }
 
@@ -58,6 +59,7 @@ input {
     font-size: 1.25rem;
     padding: 0.1rem;
     color: #072133;
+    outline: none;
 }
 
 input::placeholder {
